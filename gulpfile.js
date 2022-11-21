@@ -1,50 +1,31 @@
-const { src, dest, watch, series, paralel, parallel } = require("gulp");
+const { watch, series, parallel } = require("gulp");
 const browserSync = require("browser-sync").create();
 
-// Плагины
-const plumber = require("gulp-plumber");
-const notify = require("gulp-notify");
-const fileInclude = require("gulp-file-include");
-const htmlmin = require("gulp-htmlmin");
-const size = require("gulp-size");
+// Конфигурация
+const path = require("./config/path.js");
 
-// обработка HTML
-const html = () => {
-  return src("./src/html/*.html")
-    .pipe(
-      plumber({
-        errorHandler: notify.onError(),
-      })
-    )
-    .pipe(fileInclude())
-    .pipe(size({ title: "До сжатия" }))
-    .pipe(
-      htmlmin({
-        collapseWhitespace: true,
-      })
-    )
-    .pipe(size({ title: "После сжатия" }))
-    .pipe(dest("./public"))
-    .pipe(browserSync.stream());
-};
+// Задачи
+// const clear = require("./task/clear.js");
+const html = require("./task/html.js");
 
 // Cервер
 const server = () => {
   browserSync.init({
     server: {
-      baseDir: "./public",
+      baseDir: path.root,
     },
   });
 };
 
 // Наблюдение
 const watcher = () => {
-  watch("./src/html/**/*.html", html);
+  watch(path.html.watch, html).on("all", browserSync.reload);
 };
 
 // Задачи
 exports.html = html;
 exports.watch = watcher;
+// exports.clear = clear;
 
 // сборка
-exports.dev = series(html, parallel(watcher, server));
+exports.dev = series(/* clear, */ html, parallel(watcher, server));
