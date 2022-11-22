@@ -1,6 +1,6 @@
 module.exports = {
   htmlmin: {
-    collapseWhitespace: true,
+    collapseWhitespace: false,
   },
   pug: {
     pretty: true,

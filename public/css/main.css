@@ -1,13 +1,2 @@
-* {
-  box-sizing: border-box;
-}
-
-body{
-    font-size: 22px;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
-}
-
-.title {
-  text-transform: uppercase;
-}
+*{-webkit-box-sizing:border-box;box-sizing:border-box}body{font-size:22px;font-family:Arial,Helvetica,sans-serif;line-height:1.5}.title{text-transform:uppercase}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhc2UuY3NzIiwidGl0bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLEMsQ0FDQSw2QixDQUFBLHFCLENBR0EsSSxDQUNBLGMsQ0FDQSxzQyxDQUNBLGUsQ0NQQSxNLENBQ0Esd0IiLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIqIHtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcblxyXG5ib2R5e1xyXG4gICAgZm9udC1zaXplOiAyMnB4O1xyXG4gICAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XHJcbiAgICBsaW5lLWhlaWdodDogMS41O1xyXG59XHJcbiIsIi50aXRsZSB7XHJcbiAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxufVxyXG4iXX0= */
