@@ -7,6 +7,7 @@ const path = require("./config/path.js");
 // Задачи
 // const clear = require("./task/clear.js");
 const html = require("./task/html.js");
+const css = require("./task/css.js");
 
 // Cервер
 const server = () => {
@@ -20,12 +21,17 @@ const server = () => {
 // Наблюдение
 const watcher = () => {
   watch(path.html.watch, html).on("all", browserSync.reload);
+  watch(path.css.watch, css).on("all", browserSync.reload);
 };
 
 // Задачи
 exports.html = html;
-exports.watch = watcher;
+exports.css = css;
 // exports.clear = clear;
 
 // сборка
-exports.dev = series(/* clear, */ html, parallel(watcher, server));
+exports.dev = series(
+  /* clear, */
+  parallel(html, css),
+  parallel(watcher, server)
+);
