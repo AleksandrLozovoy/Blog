@@ -11,6 +11,10 @@ const concat = require("gulp-concat");
 const cssimport = require("gulp-cssimport");
 const autoprefixer = require("gulp-autoprefixer");
 const csso = require("gulp-csso");
+const rename = require("gulp-rename");
+const size = require("gulp-size");
+const shorthand = require("gulp-shorthand");
+const groupCssMediaQueries = require("gulp-group-css-media-queries");
 
 // обработка CSS
 const css = () => {
@@ -26,7 +30,13 @@ const css = () => {
     .pipe(concat("main.css"))
     .pipe(cssimport())
     .pipe(autoprefixer())
+    .pipe(shorthand())
+    .pipe(groupCssMediaQueries())
+    .pipe(size({ title: "До сжатия" }))
+    .pipe(dest(path.css.dest, { sourcemaps: true }))
+    .pipe(rename({ suffix: ".min" }))
     .pipe(csso())
+    .pipe(size({ title: "После сжатия" }))
     .pipe(dest(path.css.dest, { sourcemaps: true }));
 };
 
