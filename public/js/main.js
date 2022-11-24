@@ -1,0 +1,1 @@
+!function(){var __webpack_modules__={"./src/js/main.js":function(){eval("const sum = (a, b) => a + b;\r\nconsole.log(sum(2, 10));\r\n\n\n//# sourceURL=webpack://blog/./src/js/main.js?")}},__webpack_exports__={};__webpack_modules__["./src/js/main.js"]()}();
