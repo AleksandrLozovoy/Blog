@@ -15,10 +15,12 @@ const rename = require("gulp-rename");
 const size = require("gulp-size");
 const shorthand = require("gulp-shorthand");
 const groupCssMediaQueries = require("gulp-group-css-media-queries");
+const webpCss = require("gulp-webp-css");
+const gulpif = require("gulp-if");
 
 // обработка CSS
 const css = () => {
-  return src(path.css.src, { sourcemaps: true })
+  return src(path.css.src, { sourcemaps: app.isDev })
     .pipe(
       plumber({
         errorHandler: notify.onError((error) => ({
@@ -29,15 +31,16 @@ const css = () => {
     )
     .pipe(concat("main.css"))
     .pipe(cssimport())
+    .pipe(webpCss())
     .pipe(autoprefixer())
     .pipe(shorthand())
     .pipe(groupCssMediaQueries())
     .pipe(size({ title: "До сжатия" }))
-    .pipe(dest(path.css.dest, { sourcemaps: true }))
+    .pipe(dest(path.css.dest, { sourcemaps: app.isDev }))
     .pipe(rename({ suffix: ".min" }))
     .pipe(csso())
     .pipe(size({ title: "После сжатия" }))
-    .pipe(dest(path.css.dest, { sourcemaps: true }));
+    .pipe(dest(path.css.dest, { sourcemaps: app.isDev }));
 };
 
 module.exports = css;

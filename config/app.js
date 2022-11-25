@@ -1,12 +1,17 @@
+const isProd = process.argv.includes("--production");
+const isDev = !isProd;
+
 module.exports = {
+  isProd: isProd,
+  isDev: isDev,
   htmlmin: {
-    collapseWhitespace: false,
+    collapseWhitespace: isProd,
   },
   pug: {
-    pretty: true,
+    pretty: isDev,
   },
   webpack: {
-    mode: "development",
+    mode: isProd ? "production" : "development",
   },
   imagemin: {
     verbose: true,
