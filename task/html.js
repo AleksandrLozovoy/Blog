@@ -11,14 +11,25 @@ import fileInclude from "gulp-file-include";
 import htmlmin from "gulp-htmlmin";
 import size from "gulp-size";
 import webpHtml from "gulp-webp-html";
+import panini from "panini";
 
 // обработка HTML
 const html = () => {
+  panini.refresh();
   return gulp
     .src(path.html.src)
     .pipe(
       plumber({
         errorHandler: notify.onError(),
+      })
+    )
+    .pipe(
+      panini({
+        root: "src/html/",
+        layouts: "src/html/layouts/",
+        partials: "src/html/partials/",
+        helpers: "src/html/helpers/",
+        data: "src/html/data/",
       })
     )
     .pipe(fileInclude())
