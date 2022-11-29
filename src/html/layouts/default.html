@@ -6,9 +6,15 @@
 </head>
 
 <body>
-    {{> header }}
-    {{> body }}
-    {{> footer }}
+    <div class="page">
+        {{> header }}
+        <aside class="sidebar">
+            Sidebar
+        </aside>
+        <main class="main">
+            {{> body }}
+        </main>
+    </div>
 
 </body>
 
