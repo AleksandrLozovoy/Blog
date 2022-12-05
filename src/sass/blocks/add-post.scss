@@ -1,0 +1,66 @@
+.add-post {
+  margin-bottom: 30px;
+  padding: 15px 20px;
+  box-shadow: 0 15px 25px rgba($black, 0.45);
+  background-color: $secondary;
+  border-radius: 5px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.add-post__form {
+  display: flex;
+}
+
+.add-post__text {
+  display: block;
+  width: 70%;
+  font-size: 15px;
+  color: inherit;
+  font-family: inherit;
+  background-color: transparent;
+  resize: none;
+  border: none;
+  &::placeholder {
+    color: #d2d2d2;
+  }
+}
+
+.add-post__actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+}
+
+.add-post__file {
+  margin-right: 5px;
+  display: block;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  input {
+    display: none;
+  }
+  svg rect {
+    transition: fill 0.2s linear;
+  }
+  svg rect:hover {
+    fill: darken(#ebebeb, 10%);
+  }
+}
+
+.add-post__send {
+  display: block;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background-color: transparent;
+  transition: fill 0.5s linear;
+  svg rect {
+    transition: fill 0.2s linear;
+  }
+  svg rect:hover {
+    fill: darken(#3137c9, 10%);
+  }
+}
