@@ -1,0 +1,35 @@
+.related {
+  padding: 30px 0 0 0;
+  border-bottom: 1px #1c1c1c solid;
+  margin-bottom: 30px;
+}
+
+.related__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.related__list-item {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.related__list-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 14px;
+  transition: text-decoration 0.3s linear;
+  a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.related__list-time {
+  color: #828282;
+  font-size: 12px;
+}

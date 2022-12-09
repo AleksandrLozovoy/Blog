@@ -28,6 +28,11 @@
       background-color: darken($blue, 5%);
     }
   }
+
+  &--rounded {
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
 }
 
 button {
