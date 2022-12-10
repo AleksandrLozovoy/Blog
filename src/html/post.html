@@ -80,10 +80,42 @@ title: Post
 
         <h3 class="post__subtitle">Обсуждение</h3>
         <form class="comments__form" action="/" method="post">
-            <textarea class="comment__text" name="comment-text" placeholder="Текст комментария"></textarea>
+            <textarea class="post__textarea" name="comment-text" placeholder="Текст комментария"></textarea>
             <button class="btn btn--blue btn--rounded">Отправить</button>
         </form>
-        <div class="comments"></div>
+
+        <ul class="comments">
+            <li class="comments__item">
+                <div class="comments__header">
+                    <img class="comments__avatar" src="img/profileAvatar.jpg" alt="аватар">
+                    <div class="comments__autor">
+                        <div class="comments__name">Алексндр Лозовой</div>
+                        <time class="comments__data" datetime="2022-05-20">20.05.2022</time>
+                    </div>
+                </div>
+                <div class="comments__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem optio veniam
+                    porro? Distinctio expedita iste debitis ipsum illo esse, facere quaerat aliquam unde, animi nulla
+                    veritatis modi praesentium voluptatum nisi?</div>
+                <button class="comments__reply">Ответить</button>
+                <ul class="comments">
+                    <li class="comments__item">
+                        <div class="comments__header">
+                            <img class="comments__avatar" src="img/profileAvatar.jpg" alt="аватар">
+                            <div class="comments__autor">
+                                <div class="comments__name">Валера Ячевский</div>
+                                <time class="comments__data" datetime="2022-05-20">20.05.2022</time>
+                            </div>
+                        </div>
+                        <div class="comments__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem
+                            optio veniam
+                            porro? Distinctio expedita iste debitis ipsum illo esse, facere quaerat aliquam unde, animi
+                            nulla
+                            veritatis modi praesentium voluptatum nisi?</div>
+                        <button class="comments__reply">Ответить</button>
+                    </li>
+                </ul>
+            </li>
+        </ul>
 
     </div>
 </article>
