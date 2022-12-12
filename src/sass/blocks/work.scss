@@ -25,6 +25,7 @@
 }
 
 .work__content {
+  position: relative;
   width: 50%;
   padding: 25px;
 }
@@ -51,20 +52,24 @@
 
 .work__tags {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .work__tags-item {
   display: inline-block;
-  font-weight: 500;
-  font-size: 12px;
+  margin: 0 5px 10px 5px;
+  font-weight: 400;
+  font-size: 11px;
   line-height: 1.1;
   color: $white;
-  background: $primary;
-  padding: 12px 25px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 25px;
+  background: #ea8c1e;
+  padding: 4px 9px;
+  border-radius: 3px;
+}
+
+.work__footer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
