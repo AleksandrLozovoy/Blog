@@ -14,6 +14,10 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: white;
   line-height: 1.5;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 @import "blocks/page";
 @import "blocks/header";
@@ -35,3 +39,4 @@ body {
 @import "blocks/cabinet";
 @import "blocks/form";
 @import "blocks/signup";
+@import "blocks/modal";
