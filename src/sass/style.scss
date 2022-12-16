@@ -1,4 +1,5 @@
-@import "blocks/vars";
+@import "vars";
+@import "mixins";
 @import "vendor/reset";
 
 *,
@@ -40,3 +41,4 @@ body {
 @import "blocks/form";
 @import "blocks/signup";
 @import "blocks/modal";
+@import "blocks/burger";

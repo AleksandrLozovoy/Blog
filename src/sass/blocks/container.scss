@@ -2,4 +2,8 @@
   max-width: 700px;
   margin: 0 auto;
   padding: 0 50px;
+
+  @include breakpoint($mobile) {
+    padding: 0 15px;
+  }
 }
