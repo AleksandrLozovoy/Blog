@@ -1,62 +1,66 @@
 .burger {
-  width: 30px;
-  height: 20px;
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 0;
-  color: transparent;
-
-  &:before,
-  &:after,
-  span {
+  display: none;
+  @include breakpoint($tablet) {
     display: block;
-    width: 100%;
-    height: 2px;
-    background-color: $white;
+    width: 30px;
+    height: 20px;
     position: absolute;
-  }
-
-  &:before,
-  &:after {
-    content: "";
-    transition: transform 0.2s linear;
-  }
-
-  &:before {
-    top: 0;
-  }
-
-  &:after {
-    bottom: 0;
-  }
-
-  span {
     top: 50%;
+    left: 15px;
     transform: translateY(-50%);
-    transition: opacity 0.2s linear;
-  }
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0;
+    color: transparent;
 
-  &.active {
+    &:before,
+    &:after,
     span {
-      opacity: 0;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $white;
+      position: absolute;
     }
 
     &:before,
     &:after {
-      top: 50%;
+      content: "";
+      transition: transform 0.2s linear;
     }
 
     &:before {
-      transform: rotate(45deg);
+      top: 0;
     }
 
     &:after {
-      transform: rotate(-45deg);
+      bottom: 0;
+    }
+
+    span {
+      top: 50%;
+      transform: translateY(-50%);
+      transition: opacity 0.2s linear;
+    }
+
+    .show-sidebar & {
+      span {
+        opacity: 0;
+      }
+
+      &:before,
+      &:after {
+        top: 50%;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
     }
   }
 }
