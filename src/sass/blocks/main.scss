@@ -2,5 +2,6 @@
   padding: 100px 0 80px 300px;
   @include breakpoint($tablet) {
     padding-left: 0;
+    padding-bottom: 30px;
   }
 }

@@ -43,3 +43,14 @@
   font-size: 12px;
   margin-bottom: 5px;
 }
+
+.comments__reply {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: $blue;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

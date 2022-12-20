@@ -12,6 +12,10 @@
 .related__list-item {
   width: 50%;
   margin-bottom: 30px;
+  @include breakpoint($mobile) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .related__list-title {

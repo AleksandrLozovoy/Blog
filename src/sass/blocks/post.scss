@@ -7,6 +7,9 @@
   box-shadow: 0 15px 25px rgba($black, 0.35);
   margin-bottom: 30px;
   overflow: hidden;
+  @include breakpoint($mobile) {
+    padding: 16px;
+  }
 }
 
 .post__actions {
@@ -41,6 +44,7 @@
   margin-bottom: 15px;
   a {
     text-decoration: none;
+    line-height: 1.4;
     color: inherit;
     font-size: 18px;
     font-weight: 500;
@@ -146,10 +150,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include breakpoint($mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .post__data {
   display: flex;
+  @include breakpoint($mobile) {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
 }
 
 .post__data-item {

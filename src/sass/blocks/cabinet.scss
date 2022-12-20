@@ -1,14 +1,25 @@
 .cabinet__title {
   font-size: 21px;
   margin-bottom: 30px;
+  @include breakpoint($tablet) {
+    text-align: center;
+  }
 }
 
 .cabinet {
   display: flex;
+  @include breakpoint($tablet) {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 
 .cabinet__form {
   width: 340px;
+  @include breakpoint($tablet) {
+    width: 100%;
+  }
 }
 
 .cabinet__avatar {
@@ -19,6 +30,11 @@
     height: 150px;
     width: 150px;
     margin-bottom: 10px;
+  }
+  @include breakpoint($tablet) {
+    padding-left: 0;
+    margin-bottom: 20px;
+    text-align: center;
   }
 }
 
